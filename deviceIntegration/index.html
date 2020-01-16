@@ -1,0 +1,1329 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="User documentation and SDK for robomq.io">
+      
+      
+        <link rel="canonical" href="http://robomq.readthedocs.org/deviceIntegration/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>IoT and M2M integration - robomq.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#iot-and-m2m-integration" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://robomq.readthedocs.org/" title="robomq.io" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              robomq.io
+            </span>
+            <span class="md-header-nav__topic">
+              
+                IoT and M2M integration
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/robomq/robomq.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://robomq.readthedocs.org/" title="robomq.io" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    robomq.io
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/robomq/robomq.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="What is RoboMQ" class="md-nav__link">
+      What is RoboMQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../gettingStarted/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../creatingNewApplication/" title="Creating a new application" class="md-nav__link">
+      Creating a new application
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        IoT and M2M integration
+      </label>
+    
+    <a href="./" title="IoT and M2M integration" class="md-nav__link md-nav__link--active">
+      IoT and M2M integration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-as-an-example-device" class="md-nav__link">
+    Raspberry Pi as an example device
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-raspberry-pi-ready" class="md-nav__link">
+    Getting raspberry pi ready
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-device" class="md-nav__link">
+    Input device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-source" class="md-nav__link">
+    Power source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoroptional" class="md-nav__link">
+    Monitor(optional)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensors" class="md-nav__link">
+    Sensors:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadboard-and-jumper-wires" class="md-nav__link">
+    Breadboard and jumper wires
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-and-sensors" class="md-nav__link">
+    Raspberry Pi and sensors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dht11-humidity-temperature-sensor" class="md-nav__link">
+    DHT11 humidity &amp; temperature sensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light-sensor" class="md-nav__link">
+    Light sensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pir-motion-sensor" class="md-nav__link">
+    PIR motion sensor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrate-raspberry-pi-with-robomq" class="md-nav__link">
+    Integrate Raspberry Pi with RoboMQ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messaging-with-amqp" class="md-nav__link">
+    Messaging with AMQP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-producer" class="md-nav__link">
+    Create Producer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-sensor-programs" class="md-nav__link">
+    Edit Sensor Programs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messaging-with-mqtt" class="md-nav__link">
+    Messaging with MQTT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messaging-with-stomp" class="md-nav__link">
+    Messaging with STOMP
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../applicationIntegration/" title="Application integration" class="md-nav__link">
+      Application integration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../SDK/" title="SDK & example codes" class="md-nav__link">
+      SDK & example codes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../AMQP/" title="AMQP Introduction" class="md-nav__link">
+      AMQP Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../one-one/" title="One to one (direct) messaging" class="md-nav__link">
+      One to one (direct) messaging
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../broadcast/" title="Broadcast (publish/subscribe)" class="md-nav__link">
+      Broadcast (publish/subscribe)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../routing-key/" title="Key based message routing" class="md-nav__link">
+      Key based message routing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../topic/" title="Filter based routing (topic)" class="md-nav__link">
+      Filter based routing (topic)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../request-reply/" title="Request and reply" class="md-nav__link">
+      Request and reply
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../MQTT/" title="MQTT" class="md-nav__link">
+      MQTT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../STOMP/" title="STOMP" class="md-nav__link">
+      STOMP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../WebSTOMP/" title="WebSTOMP" class="md-nav__link">
+      WebSTOMP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SSL/" title="SSL" class="md-nav__link">
+      SSL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../REST/" title="REST" class="md-nav__link">
+      REST
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../managed_file_transfer/" title="Managed File Transfer" class="md-nav__link">
+      Managed File Transfer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../IotAnalytics-walkthrough/" title="IoT Analytics" class="md-nav__link">
+      IoT Analytics
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Connectors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Connectors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../connectors/" title="Connectors" class="md-nav__link">
+      Connectors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../MS-Active Directory/" title="MS Active Directory" class="md-nav__link">
+      MS Active Directory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ADP-to-AD_Connector/" title="ADP to AD" class="md-nav__link">
+      ADP to AD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Atlassian JIRA - Connector/" title="Atlassian JIRA" class="md-nav__link">
+      Atlassian JIRA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Salesforce_Connector/" title="Salesforce" class="md-nav__link">
+      Salesforce
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Database_Connector/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Oracle-Database_Connector/" title="Oracle Database" class="md-nav__link">
+      Oracle Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Workday-Connector/" title="Workday" class="md-nav__link">
+      Workday
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-as-an-example-device" class="md-nav__link">
+    Raspberry Pi as an example device
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-raspberry-pi-ready" class="md-nav__link">
+    Getting raspberry pi ready
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-device" class="md-nav__link">
+    Input device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-source" class="md-nav__link">
+    Power source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoroptional" class="md-nav__link">
+    Monitor(optional)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensors" class="md-nav__link">
+    Sensors:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadboard-and-jumper-wires" class="md-nav__link">
+    Breadboard and jumper wires
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-and-sensors" class="md-nav__link">
+    Raspberry Pi and sensors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dht11-humidity-temperature-sensor" class="md-nav__link">
+    DHT11 humidity &amp; temperature sensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light-sensor" class="md-nav__link">
+    Light sensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pir-motion-sensor" class="md-nav__link">
+    PIR motion sensor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrate-raspberry-pi-with-robomq" class="md-nav__link">
+    Integrate Raspberry Pi with RoboMQ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messaging-with-amqp" class="md-nav__link">
+    Messaging with AMQP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-producer" class="md-nav__link">
+    Create Producer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-sensor-programs" class="md-nav__link">
+    Edit Sensor Programs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messaging-with-mqtt" class="md-nav__link">
+    Messaging with MQTT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messaging-with-stomp" class="md-nav__link">
+    Messaging with STOMP
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/robomq/robomq.io/edit/master/docs/deviceIntegration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="iot-and-m2m-integration">IoT and M2M Integration</h1>
+<p>Devices, sensors and systems connecting together are driving the next generation of applications creating the Internet of Things (IoT). <a href="https://www.robomq.io" target="_blank">RoboMQ</a> provides an open standard based platform to connect your devices and sensors to the back-end applications, systems, processes and people to build the nest big thing. You can work with message queue protocols like MQTT ( MQ for Telemetry), AMQP (Advanced Message Queue Protocol) and STOMP ( Simple Text Oriented Messaging Protocol) while using <a href="https://www.robomq.io" target="_blank">RoboMQ</a>.</p>
+<p>The protocols supported by <a href="https://www.robomq.io" target="_blank">RoboMQ</a> can run on very small footprint devices using a choice among languages that are supported by device OS and profile.</p>
+<p>Common choices of devices include Raspberry Pi, Audrino, Beaglebone and mBed based platforms. The most basic requirement is the support for running one languages and network connectivity. You should however be cognizant of the device footprint when choosing the message queue protocol.</p>
+<p>For the example case, we have chosen Raspberry Pi device running a small Linux kernel (a variant of Debian Linux) and Python programming language.</p>
+<h2 id="raspberry-pi-as-an-example-device">Raspberry Pi as an example device</h2>
+<p>The Raspberry Pi is a credit-card sized micro-computer that plugs into your TV and a keyboard. It is a capable little computer which can be used in electronics projects. In this guide you will be introduced how to use raspberry pi to acquire information from real-world via sensors and other electrical components, and then integrate raspberry pi into <a href="https://www.robomq.io" target="_blank">RoboMQ</a> as data producer.</p>
+<p><img alt="RaspberryPi" src="../images/raspberryPi.jpg" /></p>
+<h3 id="getting-raspberry-pi-ready">Getting raspberry pi ready</h3>
+<p>There may be some steps to do when you have all the devices and materials. For example you need to install a system into the micro-SD card which your raspberry pi will be boot from.</p>
+<p>For detailed instructions on how to setup a raspberry pi, please go to the official raspberry pi document page.</p>
+<p><a href="https://www.raspberrypi.org/documentation/" target="_blank">Raspberry Pi Documentation</a></p>
+<h3 id="prerequisite">Prerequisite</h3>
+<h3 id="raspberry-pi">Raspberry Pi</h3>
+<p>Although any model of raspberry pi will work, we recommend the newest version. In this documentation we will use the model raspberry pi B+ for the example. You can buy a raspberry pi from their official site:</p>
+<p><a href="https://www.raspberrypi.org/products/" target="_blank">raspberry products</a></p>
+<h3 id="input-device">Input device</h3>
+<p>For raspberry B+ there are 4 USB ports on the board. You can plug in a USB keyboard and mouse to control your raspberry pi.</p>
+<h3 id="power-source">Power source</h3>
+<p>A typical Android cellphone charger is good for raspberry pi.</p>
+<h3 id="monitoroptional">Monitor(optional)</h3>
+<p>Raspberry Pi has an HDMI port for display. It may be easier and more comfortable for you to work with your raspberry pi directly on it's own system GUI. But if you do not, there is still no problem because you can also use you laptop to ssh the raspberry and control it in the terminal. For tutorial how to ssh a raspberry you can refer to Adafruit Learning System:</p>
+<p><a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-6-using-ssh" target="_blank">https://learn.adafruit.com/adafruits-raspberry-pi-lesson-6-using-ssh</a></p>
+<h3 id="sensors">Sensors:</h3>
+<p>Raspberry pi is compatible with a lot of sensors. In our documentation we are going to show 3 sensors for demonstration: DHT11 humidity &amp; temperature sensor, PIR motion sensor and light sensor. You can get these sensors from online shopping sites (Amazon, ebay, etc).</p>
+<h3 id="breadboard-and-jumper-wires">Breadboard and jumper wires</h3>
+<p>These are used to connect sensors to the raspberry pi. You can also get these from online shopping sites.</p>
+<p><img alt="components" src="../images/components.jpg" /></p>
+<h3 id="python">Python</h3>
+<p>This is the language we recommend for raspberry pi-sensor programming. As it's handy, simple, and is supported by raspberry pi. Python 2.7.3 or above is preferred.</p>
+<h3 id="raspberry-pi-and-sensors">Raspberry Pi and sensors</h3>
+<p><img alt="Connected Sensors" src="../images/connectedSensors.jpg" />
+With raspberry pi we can easily develop some sensor programs. In this part we are going to show 3 examples: PIR motion sensor, DHT11 humidity &amp; temperature sensor, and light sensor. Before integrating these sensors into <a href="https://www.robomq.io" target="_blank">RoboMQ</a>, we would try them locally on your raspberry. You can see how them work in your raspberry pi LXTerminal.  </p>
+<p>For details about how to set up and run the sensors with raspberry pi, please go to the <strong>Adafruit Learning System</strong>.  </p>
+<h3 id="dht11-humidity-temperature-sensor">DHT11 humidity &amp; temperature sensor</h3>
+<p><img alt="DHT sensor" src="../images/DHTSensor.jpg" /></p>
+<p><a href="https://learn.adafruit.com/downloads/pdf/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging.pdf" target="_blank">https://learn.adafruit.com/downloads/pdf/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging.pdf</a></p>
+<h3 id="light-sensor">Light sensor</h3>
+<p><img alt=" Light sensor" src="../images/LightSensor.jpg" /></p>
+<p><a href="https://learn.adafruit.com/basic-resistor-sensor-reading-on-raspberry-pi/basic-photocell-reading" target="_blank">https://learn.adafruit.com/basic-resistor-sensor-reading-on-raspberry-pi/basic-photocell-reading</a></p>
+<h3 id="pir-motion-sensor">PIR motion sensor</h3>
+<p><img alt="Motion sensor" src="../images/motionSensor.jpg" /></p>
+<p><a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-12-sensing-movement/overview" title="PIR motion sensor">https://learn.adafruit.com/adafruits-raspberry-pi-lesson-12-sensing-movement/overview</a>
+<a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-12-sensing-movement/overview" target="_blank">https://learn.adafruit.com/adafruits-raspberry-pi-lesson-12-sensing-movement/overview</a></p>
+<h2 id="integrate-raspberry-pi-with-robomq">Integrate Raspberry Pi with RoboMQ</h2>
+<p>After you have finished setting it up and testing it locally, you may start to think: Why would I do this? What can I do with this in real world? </p>
+<p>Okay, let's imagine a scenario. You are an employee in a water &amp; sewer utility company. You need a system to monitor your water wells. You need temperature, humidity, luminance, and intruder detection real-time data to be read as it happens and, for some, at a defined interval. And for the convenience of management and ability to take immediate actions, you need all the data to be visible in your control center.</p>
+<p>As an smart engineer, you have already developed the sensor data collecting programs, as discussed in sections above, by working with raspberry pi and sensors locally. What you need now is to add some simple code to send the data read from the sensors via <a href="https://www.robomq.io" target="_blank">RoboMQ</a> broker to <a href="https://www.robomq.io" target="_blank">RoboMQ</a> dashboard application so that you can easily open the dashboard and view data charts.</p>
+<p>For sending data, the main job is to create a producer module, then call its send method in your raspberry pi sensor programs. Follow the next section to build this application. You will find it easy, handy and fun !!!  </p>
+<blockquote>
+<p><a href="https://www.robomq.io" target="_blank">RoboMQ</a> has now enhanced and packaged the sensorProducer module introduced bellow. You may either directly use our package or build the module yourself following the next section. The Python pip package is available at <a href="https://s3.amazonaws.com/public.robomq/packages/sensorProducer.tar.gz">https://s3.amazonaws.com/public.robomq/packages/sensorProducer.tar.gz</a>. Read our blog at <a href="http://robomq.blogspot.com/2015/05/device-to-dashboard-real-time-analytics.html">http://robomq.blogspot.com/2015/05/device-to-dashboard-real-time-analytics.html</a> for specific use guide.  </p>
+</blockquote>
+<h2 id="messaging-with-amqp">Messaging with AMQP</h2>
+<h4 id="create-producer">Create Producer</h4>
+<p>First, launch your raspberry pi and create a file named "producer.py", then paste the following code into the file:</p>
+<pre><code class="python">import sys, os, json, pika
+
+stationID = &quot;well1&quot;
+coordinate = [-89, 64]
+server = &quot;hostname&quot;
+port = &quot;5672&quot;
+vhost = &quot;waterSupply&quot;
+username = &quot;username&quot;
+password = &quot;password&quot;
+topic = &quot;sensors&quot;
+parameters = pika.URLParameters(&quot;amqp://&quot; + username + &quot;:&quot; + password + &quot;@&quot; + server + &quot;:&quot; + port + &quot;/&quot; + vhost)
+
+def connect():
+    try:
+        connection = pika.BlockingConnection(parameters)
+        channel = connection.channel()
+        return channel
+    except:
+        print &quot;Error: Failed to connect broker&quot;
+
+channel = connect() #connect to broker
+
+#publish message
+def send(msgJson):
+    global channel
+    msgJson[&quot;stationID&quot;] = stationID
+    msgJson[&quot;coordinate&quot;] = coordinate
+    properties = pika.BasicProperties(content_type = &quot;application/json&quot;, delivery_mode = 1)
+    try:
+        channel.basic_publish(&quot;amq.topic&quot;, topic, json.dumps(msgJson, ensure_ascii=False), properties)
+    except:
+        print &quot;Error: Failed to send message&quot;
+        channel = connect() #reconnect to broker
+</code></pre>
+
+<p>It will be the producer module that you are going to import in your raspberry pi-sensor codes to send messages to <a href="https://www.robomq.io" target="_blank">RoboMQ</a>. As you can see, the producer module contains 2 methods. First is the <code>connect()</code> method that is in charge of establishing connection to the <a href="https://www.robomq.io" target="_blank">RoboMQ</a> broker. It will automatically reconnect on exception too. Another method is <code>send()</code> which publishes messages through <a href="https://www.robomq.io" target="_blank">RoboMQ</a> to worker consumers running on <a href="https://www.robomq.io" target="_blank">RoboMQ</a> server. (You always have the option to build your own worker consumers to handle messages sent by yourself).<br />
+In any of your sensor programs, just call <code>send()</code> function to send the data collection to <a href="https://www.robomq.io" target="_blank">RoboMQ</a> broker.  A message should be a JSON object containing key-value pairs. Now we are all set for the producer module, after this we are going add a few lines in the sensor programs.</p>
+<h4 id="edit-sensor-programs">Edit Sensor Programs</h4>
+<p>In this part we are going to combine the DHT11 sensor and the Light sensor into one program, just for clean-wise.</p>
+<p>Edit your DHT11 sensor and Light sensor program as bellow:</p>
+<pre><code class="python">import RPi.GPIO as gpio
+import Adafruit_DHT
+import time
+import os
+import sys
+import producer      
+
+DEBUG = 1
+gpio.setmode(gpio.BCM)
+
+htsensor = Adafruit_DHT.DHT11
+htpin = 4
+lpin=21
+
+while True:
+   humidity, temperature = Adafruit_DHT.read_retry(htsensor, htpin)
+   if humidity is not None and temperature is not None:
+       temperature = temperature * 9 / 5 + 32
+       print 'Temp={0:0.1f}*F  Humid={1:0.1f}%'.format(temperature, humidity)
+   else:
+       print 'Failed to get reading. Try again!'
+
+reading = 0
+gpio.setup(lpin, gpio.OUT)
+gpio.output(lpin, gpio.LOW)
+time.sleep(1)
+gpio.setup(lpin, gpio.IN)
+while (gpio.input(lpin) == gpio.LOW):
+   reading += 1
+luminance = 100 - reading
+print ('Luminance='), luminance
+
+message = {&quot;time&quot;: time.time() * 1000}
+message[&quot;temperature&quot;] = temperature
+message[&quot;humidity&quot;] = humidity
+message[&quot;luminance&quot;] = luminance
+try:
+   producer.send(message)
+except:
+   print &quot;Error: failed to send data through producer&quot;
+
+time.sleep(30) #interval
+</code></pre>
+
+<p>And then edit your PIR motion sensor as bellow:</p>
+<pre><code class="python">import RPi.GPIO as gpio
+import time
+import producer
+
+gpio.setmode(gpio.BOARD)
+mpin = 31
+gpio.setup(mpin,gpio.IN)
+
+while True:
+   gpio.wait_for_edge(mpin, gpio.RISING)
+   print('Intruder detected')
+   message = {&quot;time&quot;: time.time() * 1000}
+   message[&quot;intruder&quot;] = 1
+   try:
+       producer.send(message)
+   except:
+       print &quot;Error: failed to send data through producer&quot;
+   gpio.remove_event_detect(mpin)
+
+   gpio.wait_for_edge(mpin, gpio.FALLING)
+   print('Intruder left or froze')
+   message = {&quot;time&quot;: time.time() * 1000}
+   message[&quot;intruder&quot;] = 0
+   try:
+       producer.send(message)
+   except:
+       print &quot;Error: failed to send data through producer&quot;
+   gpio.remove_event_detect(mpin)
+</code></pre>
+
+<p>Now all your data will be sent via <a href="https://www.robomq.io" target="_blank">RoboMQ</a> broker to the our dashboard application. The only thing you need to accomplish is just open your dashboard in a Web browser.    </p>
+<h2 id="messaging-with-mqtt">Messaging with MQTT</h2>
+<p>In the example above we implemented sending message by creating a producer module in AMQP protocol and call its <code>send()</code> function in the sensor program. However there are more than one way we can build a producer as <a href="https://www.robomq.io" target="_blank">RoboMQ</a> supports multiple protocols. Now we are going to show you one more example how to send messages using the MQTT protocol.</p>
+<p>You only need to change the producer module. Modify the "producer.py" as bellow:</p>
+<pre><code class="python">import sys, os, json
+import paho.mqtt.client as mqtt
+
+stationID = &quot;well1&quot;
+coordinate = [-89, 64]
+server = &quot;hostname&quot;
+port = 1883
+vhost = &quot;waterSupply&quot;
+username = &quot;username&quot;
+password = &quot;password&quot;
+topic = &quot;sensors&quot;
+
+def connect():
+    try:
+        client = mqtt.Client(client_id=&quot;&quot;, clean_session=True, userdata=None, protocol=&quot;MQTTv31&quot;)
+        client.username_pw_set(vhost + &quot;:&quot; + username, password)
+        client.connect(server, port, keepalive=60, bind_address=&quot;&quot;)
+        client.loop_start() #start network loop
+        return client
+    except:
+        print &quot;Error: Failed to connect broker&quot;
+
+def reconnect():
+    global client
+    if (client):
+        client.loop_stop() #stop the current loop before reconnecting
+        client.disconnect()
+    client = connect()
+
+client = connect() #connect to broker
+
+#publish message
+def send(msgJson):
+    global client
+    msgJson[&quot;stationID&quot;] = stationID
+    msgJson[&quot;coordinate&quot;] = coordinate
+    try:
+        result = client.publish(topic, payload=str(json.dumps(msgJson, ensure_ascii=False)), qos=1, retain=False)
+        if (result[0] == 4):
+            reconnect() #reconnect to broker
+    except:
+        print &quot;Error: Failed to send message&quot;
+        reconnect() #reconnect to broker
+</code></pre>
+
+<p>Since the difference is limited in the producer module, there is no need to modify the sensor programs.</p>
+<h2 id="messaging-with-stomp">Messaging with STOMP</h2>
+<p>For STOMP producer module, no change is required for sensor programs either, only change your "producer.py" as bellow:</p>
+<pre><code class="python">import sys, os, json
+from stompest.config import StompConfig
+from stompest.sync import Stomp
+
+stationID = &quot;well1&quot;
+coordinate = [-89, 64]
+server = &quot;hostname&quot;
+port = &quot;61613&quot;
+vhost = &quot;waterSupply&quot;
+username = &quot;username&quot;
+password = &quot;password&quot;
+topic = &quot;sensors&quot;
+
+def connect():
+    try:
+        client = Stomp(StompConfig(&quot;tcp://&quot; + server + &quot;:&quot; + port, login = username, passcode = password, version = &quot;1.2&quot;))
+        client.connect(host = vhost)
+        return client
+    except:
+        print &quot;Error: Failed to connect broker&quot;
+
+client = connect() #connect to broker
+
+#publish message
+def send(msgJson):
+    global client
+    msgJson[&quot;stationID&quot;] = stationID
+    msgJson[&quot;coordinate&quot;] = coordinate
+    try:
+        client.send(&quot;/topic/&quot; + topic, json.dumps(msgJson, ensure_ascii=False), {&quot;content-type&quot;: &quot;application/json&quot;})
+    except:
+        print &quot;Error: Failed to send message&quot;
+        client = connect() #reconnect to broker
+</code></pre>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../creatingNewApplication/" title="Creating a new application" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Creating a new application
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../applicationIntegration/" title="Application integration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Application integration
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
