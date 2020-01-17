@@ -1,0 +1,38 @@
+site_name: robomq.io
+site_url: http://robomq.readthedocs.org/
+site_description: User documentation and SDK for robomq.io
+repo_url: https://github.com/robomq/robomq.io/
+docs_dir: docs
+nav:
+  - 'What is RoboMQ' : 'index.md' 
+  - 'Getting started' : 'gettingStarted.md'
+  - 'Creating a new application' : 'creatingNewApplication.md'
+  - 'IoT and M2M integration': 'deviceIntegration.md' 
+  - 'Application integration': 'applicationIntegration.md' 
+  - 'SDK & example codes': 'SDK.md' 
+  - 'User Guide':
+    - 'AMQP Introduction' : 'AMQP.md' 
+    - 'One to one (direct) messaging' : 'one-one.md' 
+    - 'Broadcast (publish/subscribe)': 'broadcast.md' 
+    - 'Key based message routing': 'routing-key.md' 
+    - 'Filter based routing (topic)': 'topic.md' 
+    - 'Request and reply': 'request-reply.md' 
+    - 'MQTT': 'MQTT.md' 
+    - 'STOMP': 'STOMP.md' 
+    - 'WebSTOMP': 'WebSTOMP.md' 
+    - 'SSL': 'SSL.md' 
+    - 'REST': 'REST.md' 
+    - 'Managed File Transfer': 'managed_file_transfer.md' 
+    - 'IoT Analytics': 'IotAnalytics-walkthrough.md' 
+  - 'Connectors':
+    - 'Connectors': 'connectors.md' 
+    - 'MS Active Directory': 'MS-Active Directory.md' 
+    - 'ADP to AD': 'ADP-to-AD_Connector.md' 
+    - 'Atlassian JIRA': 'Atlassian JIRA - Connector.md' 
+    - 'Salesforce': 'Salesforce_Connector.md' 
+    - 'Database': 'Database_Connector.md' 
+    - 'Oracle Database': 'Oracle-Database_Connector.md' 
+    - 'Workday': 'Workday-Connector.md' 
+  - 'About':
+    - 'About': 'about.md'
+theme: gitbook
