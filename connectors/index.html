@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Connectors - robomq.io</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="User documentation and SDK for robomq.io">
+<meta name="generator" content="mkdocs-1.0.4, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href=".." target="_blank" class="custom-link">robomq.io</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="..">What is RoboMQ</a>
+<li class="chapter" data-path="gettingStarted/">
+<a href="../gettingStarted/">Getting started</a>
+<li class="chapter" data-path="creatingNewApplication/">
+<a href="../creatingNewApplication/">Creating a new application</a>
+<li class="chapter" data-path="deviceIntegration/">
+<a href="../deviceIntegration/">IoT and M2M integration</a>
+<li class="chapter" data-path="applicationIntegration/">
+<a href="../applicationIntegration/">Application integration</a>
+<li class="chapter" data-path="SDK/">
+<a href="../SDK/">SDK & example codes</a>
+<li class="header">User Guide</li>
+
+<li>
+<a href="../AMQP/" class="">AMQP Introduction</a>
+</li>
+
+<li>
+<a href="../one-one/" class="">One to one (direct) messaging</a>
+</li>
+
+<li>
+<a href="../broadcast/" class="">Broadcast (publish/subscribe)</a>
+</li>
+
+<li>
+<a href="../routing-key/" class="">Key based message routing</a>
+</li>
+
+<li>
+<a href="../topic/" class="">Filter based routing (topic)</a>
+</li>
+
+<li>
+<a href="../request-reply/" class="">Request and reply</a>
+</li>
+
+<li>
+<a href="../MQTT/" class="">MQTT</a>
+</li>
+
+<li>
+<a href="../STOMP/" class="">STOMP</a>
+</li>
+
+<li>
+<a href="../WebSTOMP/" class="">WebSTOMP</a>
+</li>
+
+<li>
+<a href="../SSL/" class="">SSL</a>
+</li>
+
+<li>
+<a href="../REST/" class="">REST</a>
+</li>
+
+<li>
+<a href="../managed_file_transfer/" class="">Managed File Transfer</a>
+</li>
+
+<li>
+<a href="../IotAnalytics-walkthrough/" class="">IoT Analytics</a>
+</li>
+
+<li class="header">Connectors</li>
+
+<li>
+<a href="./" class="active">Connectors</a>
+</li>
+
+<li>
+<a href="../MS-Active Directory/" class="">MS Active Directory</a>
+</li>
+
+<li>
+<a href="../ADP-to-AD_Connector/" class="">ADP to AD</a>
+</li>
+
+<li>
+<a href="../Atlassian JIRA - Connector/" class="">Atlassian JIRA</a>
+</li>
+
+<li>
+<a href="../Salesforce_Connector/" class="">Salesforce</a>
+</li>
+
+<li>
+<a href="../Database_Connector/" class="">Database</a>
+</li>
+
+<li>
+<a href="../Oracle-Database_Connector/" class="">Oracle Database</a>
+</li>
+
+<li>
+<a href="../Workday-Connector/" class="">Workday</a>
+</li>
+
+<li class="header">About</li>
+
+<li>
+<a href="../about/" class="">About</a>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="salesforce-connector">Salesforce Connector</h1>
+<p>This section introduces you to the Salesforce Connector providing an interface between client devices/sensors and an customer's existing Salesforce workflow.  The <a href="https://www.robomq.io/#thingsconnect" target="_blank">connector</a> utilizes the <a href="https://www.robomq.io" target="_blank">RoboMQ</a> to ensure the guaranteed and reliable delivery of case information.</p>
+<p><strong>Overview:</strong></p>
+<p>A Salesforce customer may have one or more users/divisions within their organization.  Therefore, connector can be configured to create cases for more than one division or group within the organization based on the nature of the information or defect from the device or sensor.</p>
+<p>The connector is designed to integrate seamlessly into the customer's existing management or diagnostics workflow in Salesforce.com allowing case creation to be automated.  This offers tremendous efficiency in reducing cost and valuable time without human intervention required to act upon and manually create each case.</p>
+<p><img alt="Diagram of Salesforce Connector" src="../images/SalesforceConnector.png" /></p>
+<p><strong>Startup Authentication Process:</strong></p>
+<p>Before the connector can start processing any case requests, an access token must be provided by the Salesforce authentication server.</p>
+<ul>
+<li>The connector requests authorization on behalf on tenant providing username and password, then server verifies credentials and responds with access token.</li>
+<li>The connector obtains the access token and submits with all subsequent requests.</li>
+<li>If invalid user credentials are provided or other error prevents token from being issued, the user cannot authorize the connector to access Salesforce API in this flow.</li>
+</ul>
+<p><strong>Connector Operation:</strong></p>
+<ul>
+<li>The Salesforce connector currently supports <strong>Salesforce Case Create</strong> requests.</li>
+<li>Devices/sensors issue case requests messages over AMQP through the RoboMQ broker.</li>
+<li>The connector identifies the source of the incoming message, determines the destination Salesforce user/division, and creates a case record associated with their account.</li>
+<li>The incoming AMQP playload consists of all elements necessary to create and assign a case (i.e. subject, description, contact name, etc.).</li>
+<li>Mapping of the data elements from the device to the case attributes is configuration driven.</li>
+</ul>
+<p><strong>Configuration:</strong></p>
+<p>The connector configuration mapping is a JSON formatted file requiring definition of 2 sections, "tenant" and "divisions" as follows:</p>
+<ul>
+<li>Tenant section:<ul>
+<li>Salesforce client Id and secret for remote API access,</li>
+<li>AMQP connection parameters and credentials.</li>
+</ul>
+</li>
+<li>Divisions section:<ul>
+<li>Salesforce user/division credentials</li>
+<li>Default case record attributes</li>
+<li>AMQP exchange, queue, and/or routing key.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Prerequisite:</strong></p>
+<ol>
+<li>Requires Python 2.7 and above.</li>
+<li>Install <a href="https://pypi.python.org/pypi/simple-salesforce" target="_blank">simple-salesforce</a> REST API client.</li>
+<li>Create dead letter queue in your vhost with the script <code>deadLetterQueue.py</code> provided by <a href="https://www.robomq.io" target="_blank">RoboMQ</a>. Get the help session for detailed usage.  </li>
+</ol>
+<pre><code class="bash">python deadLetterQueue.py -?
+</code></pre>
+
+<p><strong>Execution:</strong></p>
+<p>The Connector is intended for installation/execution either on the customer's enterprise platform or hosted on a supported cloud platform.
+Starting it simply requires specifying the configuration mapping file as shown in example below:</p>
+<pre><code class="bash">python SFconnector.py -i config.json
+</code></pre>
+
+<h1 id="database-connector">Database Connector</h1>
+<p>This section introduces you to the DB Connector providing an API between your client applications/devices and back-end database. </p>
+<p><a href="https://www.robomq.io" target="_blank">RoboMQ</a> has built a DBConnector module in Python. It consists of an interface between AMQP broker and backend database supporting these transactions:</p>
+<ol>
+<li>SQL Read &amp; AMQP Publish  </li>
+<li>AMQP Get &amp; SQL Write  </li>
+<li>AMQP Subscribe &amp; SQL Write</li>
+</ol>
+<p><strong>Overview:</strong></p>
+<p><img alt="Diagram of DB Connector" src="../images/DBConnector.png" /></p>
+<ol>
+<li>DBConnector is easily installed, configured, and executes on client's enterprise platform, so there is no risk of insecure access to database. </li>
+<li>DBConnector is configured to use one logical database. All SQL CRUD transactions are supported within the database.  </li>
+<li>On the AMQP side, DBConnector will publish to a destination exchange and get messages from a source queue.   </li>
+<li>Each Read &amp; Publish transaction consists of one AMQP message per database record (row).  </li>
+<li>Each Get &amp; Write transaction consists of one or multiple write statements (insert or update) per AMQP message.  </li>
+<li>Database records can be translated to/from AMQP message in either delimited text or JSON / XML format. You can specify any delimiter if using delimited text.  </li>
+<li>If the destination exchange, source exchange &amp; queue does not exist, DBConnector will create them with the default arguments.  </li>
+<li>All the methods of DBConnector returns True, False or None, which respectively indicates success, failure or empty result. Empty result happens when the source queue is empty or read query returns 0 rows.  </li>
+<li>Messages that fail during processing (i.e. invalid content, database transaction failure, etc.) will be "dead lettered". You can find them in the dead letter queue and deal with them later.  </li>
+<li>DBConnector handles all possible exceptions to prevent your invoker process from being interrupted. It will print the error or warning and write log if you have enabled logging.   </li>
+</ol>
+<p><strong>Configuration:</strong></p>
+<p>The configuration file is written in JSON format. It consists of 3 major sections, "database", "broker" and "format".</p>
+<ul>
+<li>Database section:<ul>
+<li>access information of the database,</li>
+<li>query statement or template.</li>
+</ul>
+</li>
+<li>Broker section:<ul>
+<li>AMQP connection parameters and credentials,  </li>
+<li>message source and destination.  </li>
+</ul>
+</li>
+<li>Format section:<ul>
+<li>whether message is delimited text, JSON or XML,</li>
+<li>if delimited, specify the delimiter. </li>
+</ul>
+</li>
+</ul>
+<p><strong>Prerequisite:</strong></p>
+<ol>
+<li>Requires Python 2.7 and above.  </li>
+<li>Install pypyodbc module.  </li>
+<li>Install ODBC driver for the chosen database.</li>
+</ol>
+<p><strong>Execution:</strong></p>
+<p>After that, three major methods you'll invoke are <code>selectNSend()</code>, <code>receiveNInsert()</code> and <code>subscribeNInsert()</code>.  </p>
+<ol>
+<li><code>selectNSend()</code> executes a read query in database and publish each row of the result as a message to the destination exchange.  </li>
+<li><code>receiveNInsert()</code> gets a message from the source queue, from which extracts the values and write one record or multiple records into the database.  </li>
+<li><code>subscribeNInsert()</code> follows the same work flow as <code>receiveNInsert()</code>, except for it listens on a queue and keeps consuming messages as they come in.   </li>
+</ol>
+<p>Putting it together, the whole example script for <code>subscribeNInsert()</code> would be,    </p>
+<pre><code class="python">import os
+from thingsConnect.sql import DBConnector
+
+print &quot;1. load config from DBConnector.config&quot;
+dbc = DBConnector(os.path.dirname(os.path.realpath(__file__)) + &quot;/DBConnector.config&quot;)
+print &quot;2. subscribe &amp; insert, started listening&quot;
+dbc.subscribeNInsert()
+</code></pre>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../js/main.js"></script>
+<script src="../search/main.js"></script>
+<script src="../js/gitbook.min.js"></script>
+<script src="../js/theme.min.js"></script>
+</body>
+</html>

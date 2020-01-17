@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Application integration - robomq.io</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="User documentation and SDK for robomq.io">
+<meta name="generator" content="mkdocs-1.0.4, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href=".." target="_blank" class="custom-link">robomq.io</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="..">What is RoboMQ</a>
+<li class="chapter" data-path="gettingStarted/">
+<a href="../gettingStarted/">Getting started</a>
+<li class="chapter" data-path="creatingNewApplication/">
+<a href="../creatingNewApplication/">Creating a new application</a>
+<li class="chapter" data-path="deviceIntegration/">
+<a href="../deviceIntegration/">IoT and M2M integration</a>
+<li class="chapter active" data-path="applicationIntegration/">
+<a href="./">Application integration</a>
+<li class="chapter" data-path="SDK/">
+<a href="../SDK/">SDK & example codes</a>
+<li class="header">User Guide</li>
+
+<li>
+<a href="../AMQP/" class="">AMQP Introduction</a>
+</li>
+
+<li>
+<a href="../one-one/" class="">One to one (direct) messaging</a>
+</li>
+
+<li>
+<a href="../broadcast/" class="">Broadcast (publish/subscribe)</a>
+</li>
+
+<li>
+<a href="../routing-key/" class="">Key based message routing</a>
+</li>
+
+<li>
+<a href="../topic/" class="">Filter based routing (topic)</a>
+</li>
+
+<li>
+<a href="../request-reply/" class="">Request and reply</a>
+</li>
+
+<li>
+<a href="../MQTT/" class="">MQTT</a>
+</li>
+
+<li>
+<a href="../STOMP/" class="">STOMP</a>
+</li>
+
+<li>
+<a href="../WebSTOMP/" class="">WebSTOMP</a>
+</li>
+
+<li>
+<a href="../SSL/" class="">SSL</a>
+</li>
+
+<li>
+<a href="../REST/" class="">REST</a>
+</li>
+
+<li>
+<a href="../managed_file_transfer/" class="">Managed File Transfer</a>
+</li>
+
+<li>
+<a href="../IotAnalytics-walkthrough/" class="">IoT Analytics</a>
+</li>
+
+<li class="header">Connectors</li>
+
+<li>
+<a href="../connectors/" class="">Connectors</a>
+</li>
+
+<li>
+<a href="../MS-Active Directory/" class="">MS Active Directory</a>
+</li>
+
+<li>
+<a href="../ADP-to-AD_Connector/" class="">ADP to AD</a>
+</li>
+
+<li>
+<a href="../Atlassian JIRA - Connector/" class="">Atlassian JIRA</a>
+</li>
+
+<li>
+<a href="../Salesforce_Connector/" class="">Salesforce</a>
+</li>
+
+<li>
+<a href="../Database_Connector/" class="">Database</a>
+</li>
+
+<li>
+<a href="../Oracle-Database_Connector/" class="">Oracle Database</a>
+</li>
+
+<li>
+<a href="../Workday-Connector/" class="">Workday</a>
+</li>
+
+<li class="header">About</li>
+
+<li>
+<a href="../about/" class="">About</a>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="advantages-of-application-integration-using-message-queues">Advantages of Application Integration using Message Queues</h1>
+<p>Message Oriented Middleware (MOM) have long been used for application integration and creating Enterprise Service Bus for developing scalable and decoupled applications.</p>
+<p><a href="https://www.robomq.io" target="_blank">RoboMQ</a>&lt; platform is built with the AMQP broker at the core. The particular implementation of the AMQP broker used is <a href="https://www.robomq.io" target="_blank">RoboMQ</a>. RoboMQ thus provides all the capabilities and feature sets of the RabbitMQ platform with integrated management, dashboards, and analytics in a Software as a Service (SaaS) package.</p>
+<p>There are certain distinct advantages of using Message Queues for application integration.</p>
+<h2 id="decoupled-applications">Decoupled applications</h2>
+<p>The applications developed using Message Queues are decouple by design. What it means is that your order submission application is not hard wired to your order processor and the order processor application is not hard wired to the shipping application, in atypical order management application example. All of these applications are working together by sending discreet messages to each other. By virtue of decoupling, you can:</p>
+<ul>
+<li>
+<p>Add more functionality and applications in the system without changing the existing code</p>
+</li>
+<li>
+<p>Modify any part of the application without affecting other</p>
+</li>
+<li>
+<p>Add more instances of a part of application to handle load. If there is a order rush but order processing takes longer time, you can add more order processor to handle increased load</p>
+</li>
+<li>
+<p>Try different message delivery topologies to achieve complex process orchestration and grow the system organically</p>
+<p><strong><em>Note</em></strong> : <em>Refer to this excellent book on Integration Design patterns to learn and build complex messaging applications <a href="https://www.eaipatterns.com/eaipatterns.html" target="_blank">Enterprise Integration Patterns</a></em>  </p>
+</li>
+</ul>
+<h2 id="scalable-systems">Scalable systems</h2>
+<p>Applications and systems built using Message Queue based hub are scalable by design. Additional worker processes can be added to the different part of the system to handle increased load. This elastic scaling allows quick and dynamic handling of the bottleneck applications</p>
+<h2 id="sophisticated-integration-patterns">Sophisticated integration patterns</h2>
+<p>Message queues allow building applications using variety of Message delivery patterns and their combination. Basic message delivery patterns are :</p>
+<ol>
+<li>
+<p><strong>Direct</strong> - one to one message delivery from producers to consumers</p>
+</li>
+<li>
+<p><strong>Topic or Fanout</strong> - deliver one message to all interested consumers</p>
+</li>
+<li>
+<p><strong>Request-Reply</strong> - two way request reply communication</p>
+</li>
+<li>
+<p><strong>Content based Routing</strong> - delivering message based on routing </p>
+</li>
+<li>
+<p><strong>Work Queues</strong> - round robin delivery of messages to multiple worker processes</p>
+</li>
+</ol>
+<p>SDK containing example code for these use cases can be found at <a href="https://github.com/robomq/robomq.io/tree/master/sdk" target="_blank">RoboMQ SDK</a> </p>
+<h2 id="guaranteed-delivery">Guaranteed Delivery</h2>
+<p>Message Queue based integration hub ensures guaranteed delivery of the message and critical information. Unlike synchronous point to point communication where recipient needs to available and be on-line, Message Queues deliver message when the recipient is available.</p>
+<p>In addition, messages can be durable or persistent which will survive any catastrophic failure of the messaging system itself. </p>
+<h2 id="deliver-any-type-of-content-text-json-binary-image-or-any-arbitrary-type">Deliver any type of content - text, JSON, binary, image or any arbitrary type</h2>
+<p>Message Queue based integration system do not enforce any data format or type of content. Any type of media or content can be delivered using Message Queues. The producer and consumer of the message can decide and process any kind of the messages.</p>
+<p><em>To learn more details about the benefits of message queues built on AMQP protocol, refer to <a href="https://www.amqp.org" target="_blank">AMQP website</a></em></p>
+<p><em>Learn about RabbitMQ and the details of its implementation of AMQP, read more at <a href="https://www.rabbitmq.com" target="_blank">RabbitMQ website</a></em> </p>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../js/main.js"></script>
+<script src="../search/main.js"></script>
+<script src="../js/gitbook.min.js"></script>
+<script src="../js/theme.min.js"></script>
+</body>
+</html>

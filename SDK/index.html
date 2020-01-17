@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>SDK & example codes - robomq.io</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="User documentation and SDK for robomq.io">
+<meta name="generator" content="mkdocs-1.0.4, mkdocs-gitbook-1.0.7">
+
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../css/style.min.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="book">
+<div class="book-summary">
+<div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> <!-- end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary">
+<li>
+<a href=".." target="_blank" class="custom-link">robomq.io</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-path="">
+<a href="..">What is RoboMQ</a>
+<li class="chapter" data-path="gettingStarted/">
+<a href="../gettingStarted/">Getting started</a>
+<li class="chapter" data-path="creatingNewApplication/">
+<a href="../creatingNewApplication/">Creating a new application</a>
+<li class="chapter" data-path="deviceIntegration/">
+<a href="../deviceIntegration/">IoT and M2M integration</a>
+<li class="chapter" data-path="applicationIntegration/">
+<a href="../applicationIntegration/">Application integration</a>
+<li class="chapter active" data-path="SDK/">
+<a href="./">SDK & example codes</a>
+<li class="header">User Guide</li>
+
+<li>
+<a href="../AMQP/" class="">AMQP Introduction</a>
+</li>
+
+<li>
+<a href="../one-one/" class="">One to one (direct) messaging</a>
+</li>
+
+<li>
+<a href="../broadcast/" class="">Broadcast (publish/subscribe)</a>
+</li>
+
+<li>
+<a href="../routing-key/" class="">Key based message routing</a>
+</li>
+
+<li>
+<a href="../topic/" class="">Filter based routing (topic)</a>
+</li>
+
+<li>
+<a href="../request-reply/" class="">Request and reply</a>
+</li>
+
+<li>
+<a href="../MQTT/" class="">MQTT</a>
+</li>
+
+<li>
+<a href="../STOMP/" class="">STOMP</a>
+</li>
+
+<li>
+<a href="../WebSTOMP/" class="">WebSTOMP</a>
+</li>
+
+<li>
+<a href="../SSL/" class="">SSL</a>
+</li>
+
+<li>
+<a href="../REST/" class="">REST</a>
+</li>
+
+<li>
+<a href="../managed_file_transfer/" class="">Managed File Transfer</a>
+</li>
+
+<li>
+<a href="../IotAnalytics-walkthrough/" class="">IoT Analytics</a>
+</li>
+
+<li class="header">Connectors</li>
+
+<li>
+<a href="../connectors/" class="">Connectors</a>
+</li>
+
+<li>
+<a href="../MS-Active Directory/" class="">MS Active Directory</a>
+</li>
+
+<li>
+<a href="../ADP-to-AD_Connector/" class="">ADP to AD</a>
+</li>
+
+<li>
+<a href="../Atlassian JIRA - Connector/" class="">Atlassian JIRA</a>
+</li>
+
+<li>
+<a href="../Salesforce_Connector/" class="">Salesforce</a>
+</li>
+
+<li>
+<a href="../Database_Connector/" class="">Database</a>
+</li>
+
+<li>
+<a href="../Oracle-Database_Connector/" class="">Oracle Database</a>
+</li>
+
+<li>
+<a href="../Workday-Connector/" class="">Workday</a>
+</li>
+
+<li class="header">About</li>
+
+<li>
+<a href="../about/" class="">About</a>
+</li>
+
+<li class="divider"></li>
+
+
+
+<li><a href="http://www.mkdocs.org">
+Published with MkDocs
+</a></li>
+
+<li><a href="https://github.com/GitbookIO/theme-default">
+Theme by GitBook
+</a></li>
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<p><a href="https://www.robomq.io" target="_blank">RoboMQ</a> has rich library of examples code in multiple programming languages supporting AMQP, MQTT and STOMP protocols. The <a href="https://github.com/robomq/robomq.io/tree/master/sdk" target="_blank">SDK</a> includes example code for multiple Messaging Integration Patterns (MEPs). All examples have implemented automatic reconnecting, which is crucial in real production.  </p>
+<h1 id="supported-protocols">Supported protocols</h1>
+<p>You can send and receive messages using <a href="https://www.robomq.io" target="_blank">RoboMQ</a> platform from a choice of <a href="http://www.amqp.org/">AMQP</a> <a href="https://www.amqp.org/" target="_blank">AMQP</a>, <a href="https://www.mqtt.org" target="_blank">MQTT</a> and <a href="https://stomp.github.io/" target="_blank">STOMP</a> protocols.</p>
+<p>Each of the protocols can be used for variety of messaging integration patterns. MQTT and STOMP, being relatively light weight protocol, are ideal for small footprint devices. AMQP could be the protocol of choice for more capable applications and enterprise systems. </p>
+<h2 id="amqp-use-cases"><a href="https://github.com/robomq/robomq.io/tree/master/sdk/AMQP" target="_blank">AMQP use cases</a></h2>
+<p>Following use cases using AMQP protocols are documented with code on the <a href="https://github.com/robomq/robomq.io/tree/master/sdk/AMQP" target="_blank">RoboMQ GitHub</a>.  </p>
+<ol>
+<li>
+<p>One-to-one or direct messaging : point to point message transportation</p>
+</li>
+<li>
+<p>Broadcast : sending messages to all subscribed consumers</p>
+</li>
+<li>
+<p>Key based routing : routing messages to consumer based on key based subscription </p>
+</li>
+<li>
+<p>Filter based routing (Topic) : routing messages based on complex filter rules applied to routing keys </p>
+</li>
+<li>
+<p>Request and reply : two way request reply communication</p>
+</li>
+</ol>
+<h2 id="mqtt-use-cases"><a href="https://github.com/robomq/robomq.io/tree/master/sdk/MQTT" target="_blank">MQTT use cases</a></h2>
+<p>MQTT (Message Queues for Telemetry Transport) is lighter weight protocol for device specific use cases supporting pub-sub messaging pattern. MQTT code examples are on <a href="https://github.com/robomq/robomq.io/tree/master/sdk/MQTT" target="_blank">RoboMQ GitHub</a></p>
+<h2 id="stomp-use-cases"><a href="https://github.com/robomq/robomq.io/tree/master/sdk/STOMP" target="_blank">STOMP use cases</a></h2>
+<p>STOMP (Simple Text Oriented Messaging Protocol) is a HTTP like simple protocol and can be used for variety of use cases with very little programming. STOMP code examples are on <a href="https://github.com/robomq/robomq.io/tree/master/sdk/STOMP" target="_blank">RoboMQ GitHub</a></p>
+<h2 id="other-use-cases"><a href="https://github.com/robomq/robomq.io/tree/master/sdk/" target="_blank">Other use cases</a></h2>
+<h3 id="webstomp"><a href="https://github.com/robomq/robomq.io/tree/master/sdk/WebSTOMP" target="_blank">WebSTOMP</a></h3>
+<p>WebSTOMP is a simple bridge exposing the STOMP protocol over emulated HTML5 WebSockets, which makes it possible to use <a href="https://www.robomq.io" target="_blank">RoboMQ</a> from web browsers. WebSTOMP code examples are on <a href="https://github.com/robomq/robomq.io/tree/master/sdk/WebSTOMP" target="_blank">RoboMQ GitHub</a></p>
+<h3 id="ssl-ssl"><a href="https://github.com/robomq/robomq.io/tree/master/sdk/SSL">SSL</a> <a href="https://github.com/robomq/robomq.io/tree/master/sdk/SSL" target="_blank">SSL</a></h3>
+<p><a href="https://www.robomq.io" target="_blank">RoboMQ</a> has obtained certificate from certificate authority and supports SSL connection for all available protocols. SSL code examples  are on <a href="https://github.com/robomq/robomq.io/tree/master/sdk/SSL" target="_blank">RoboMQ GitHub</a></p>
+<h1 id="supported-programming-languages">Supported programming languages</h1>
+<p><a href="https://www.robomq.io" target="_blank">RoboMQ</a> supports majority of the programming languages. For most programming languages, the client side libraries exists for AMPQ, MQTT and STOMP protocols. The <a href="https://github.com/robomq/robomq.io/tree/master/sdk" target="_blank">SDK on GitHub</a> contains examples in Python, Node.js, PHP, Java, C and C++. We continue to add examples in additional languages.  </p>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../js/main.js"></script>
+<script src="../search/main.js"></script>
+<script src="../js/gitbook.min.js"></script>
+<script src="../js/theme.min.js"></script>
+</body>
+</html>
